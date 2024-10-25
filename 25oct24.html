@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+             let myDiv=document.createElement('div');
+        myDiv.innerText= 'Мой DIV'
+        myDiv.style.color='red';
+        myDiv.style.fontSize='50px';
+        document.body.append(myDiv);
+        let myButtom= document.createElement('buttom');
+        myButtom.innerText= 'Моя кнопка'
+        myButtom.style.color='blue';
+        myButtom.style.fontSize='50px';
+        document.body.append(myButtom);
+        document.body.style.backgroundImage="url('126205.jpg')";
+
+        let myButtom2= document.createElement('buttom');
+        myButtom.innerText= 'Моя кнопка2'
+        document.body.append(myButtom2);
+
+        myButtom.oncklick = myFunction
+
+        function myFunction(){
+            document.body.style.backgroundColor = 'black';
+        }
+
+    </script>
+</body>
+</html>
