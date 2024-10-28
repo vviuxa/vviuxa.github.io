@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        let zombie = document.createElement('img');
+         let zombie = document.createElement('img');
         zombie.src='8e0efda17a2efd19d6a818eb5efafdbe.gif';
         document.body.append(zombie);
 
@@ -17,10 +17,21 @@
         zombie.style.position='fixed';
         zombie.style.top='100px';
         zombie.style.left= left+'px';
-
-         function moveZombie(){
+        
+        function moveZombie(){
             left = left+step;
-            zombie.style.left=left+'px';
+
+            if (left > 1000){
+                step = step*(-1);
+                zombie.style.transform = 'rotateY(180deg)';
+            }
+
+            if(left < 0){
+                step=step*(-1);
+                zombies.style.transform = 'rotateY(0)';
+            }
+
+            zombie.style.left= left+'px';
         }
         setInterval(moveZombie, 1);
     </script>
