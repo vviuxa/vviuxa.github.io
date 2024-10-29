@@ -13,9 +13,9 @@
     </style>
 </head>
 <body>
-    <div id="field" onclick="showCoord(event)"></div>
+    <div id="field" onclick="createZombie(event)"></div>
     <script>
-        let field=document.getElementById('field');
+       let field=document.getElementById('field');
         function showCoord(event){
             console.log(event.clientX+':'+event.clientY);
         }
@@ -46,6 +46,37 @@
             zombie.style.left= left+'px';
         }
         setInterval(moveZombie, 1);
+
+        function createZombie(event){
+            let zombie = document.createElement('img');
+        zombie.src='8e0efda17a2efd19d6a818eb5efafdbe.gif';
+        document.body.append(zombie);
+
+        let left = 100;
+        let step=1;
+
+        zombie.style.position='fixed';
+        zombie.style.top='100px';
+        zombie.style.left= left+'px';
+        
+        function moveZombie(){
+            left = left+step;
+
+            if (left > 1000){
+                step = step*(-1);
+                zombie.style.transform = 'rotateY(180deg)';
+            }
+
+            if(left < 0){
+                step=step*(-1);
+                zombie.style.transform = 'rotateY(0)';
+            }
+
+            zombie.style.left= left+'px';
+        }
+        setInterval(moveZombie, 1);
+            console.log(event.clientX+':'+event.clientY);
+        }
     </script>
 </body>
 </html>
