@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ruletka</title>
+</head>
+<body>
+    <img src="pngwing.com (1).png" id="rul">
+    <button onclick="stopRul()">СТОП</button>
+    <BUtton onclick="startRul()">СТАРТ</BUtton>
+</body>
+
+<script>
+    let rul = document.getElementById('rul');
+    let angle =0;
+
+    function rotateRul(){
+        angle +=2;
+        rul.style.transform='rotate(' + angle +'deg)'
+    }
+
+    let timer
+
+
+    function startRul(){
+        timer = setInterval(rotateRul, 1);
+}
+
+
+function stopRul(){
+    clearInterval(timer)
+}
+</script>
+</html>
